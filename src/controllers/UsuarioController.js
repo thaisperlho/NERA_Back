@@ -6,6 +6,7 @@ const session = require("express-session");
 const Usuario = require('../models/UsuarioModel');
 
 
+
 //Configs da sessão
 app.use(session({
     name: 'teste',
@@ -18,12 +19,6 @@ app.use(session({
 }));
 
 
-
-//Busca Editoras (GET)
-router.get('/teste', async (req, res) => {
-    const usuario = await Usuario.findAll();
-    res.status(200).json(usuario);
-});
 
 router.get('/login', async (req, res) => {
    

@@ -7,6 +7,7 @@ const app = express();
 const port = 3000;
 //importações
 const usuario = require('./src/controllers/UsuarioController');
+const questao = require('./src/controllers/QuestaoController');
 
 //Rotas
 app.use(bodyParser.json());
@@ -14,5 +15,6 @@ app.use(bodyParser.json());
 app.use(cors())
 app.get('/', (req, res)=> res.send('Estou aqui'))
 app.use('/usuario', usuario);
+app.use('/questao', questao);
 
 app.listen(port, () => console.log(`Servidor rodando porta ${port}!`))
