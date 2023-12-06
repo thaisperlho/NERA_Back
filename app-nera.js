@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 //CORS: autoriza para qualquer tipo de serviço (front-end, outras apis,etc)
 const cors = require('cors')
 const app = express();
-const port = 3000;
+const port = 3001;
 //importações
 const usuario = require('./src/controllers/UsuarioController');
 const questao = require('./src/controllers/QuestaoController');

@@ -14,7 +14,7 @@ router.get('/alternativa/:id', async (req, res) => {
 
 //verifica a alternativa correta atraves do id,
 //alternativa precisa ser um str, por exeplo "1/8"
-router.get('/verificar', async (req, res) => {
+router.post('/verificar', async (req, res) => {
     const {id, alternativa} = req.body;
     const questao = await Questao.findByPk(id);
     
