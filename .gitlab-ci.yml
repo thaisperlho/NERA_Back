@@ -5,6 +5,7 @@ stages:
 npm:
  stage: npm
  script:
+ - npm config set registry ${CI_NPM_REGISTRY}
  - npm install
  cache:
  paths:
