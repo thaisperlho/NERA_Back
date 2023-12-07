@@ -9,7 +9,7 @@ const Usuario = require('../models/UsuarioModel');
 
 //Configs da sessão
 app.use(session({
-    name: 'teste',
+    name: 'sessionUser',
     secret: 'adsadsadsdasaadadss',
     resave: false,
     saveUninitialized: true,
@@ -20,7 +20,7 @@ app.use(session({
 
 
 
-router.get('/login', async (req, res) => {
+router.post('/login', async (req, res) => {
    
     const {email, senha} = req.body;
     const login = await Usuario.findOne({
@@ -32,7 +32,7 @@ router.get('/login', async (req, res) => {
         if (result) {
             req.session = result
             console.log(req.session.email);
-            res.status(200).json({message: req.session.email});
+            res.status(200).json({message: req.session});
         } else {
             res.status(401).json({message:'Verifique email ou senha de usuario'});
         }
