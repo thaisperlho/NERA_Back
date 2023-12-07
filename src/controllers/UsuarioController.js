@@ -20,7 +20,7 @@ app.use(session({
 
 
 
-router.get('/login', async (req, res) => {
+router.post('/login', async (req, res) => {
    
     const {email, senha} = req.body;
     const login = await Usuario.findOne({
