@@ -11,11 +11,11 @@ npm:
  paths:
  - node_modules/
   artifacts:
-    expire_in: 2 days
-    reports:
-      coverage_report:
-        coverage_format: cobertura
-        path: python_app/coverage.xml
+  expire_in: 2 days
+  reports:
+  coverage_report:
+  coverage_format: cobertura
+  path: python_app/coverage.xml
  when: on_success
  paths:
  - node_modules/
