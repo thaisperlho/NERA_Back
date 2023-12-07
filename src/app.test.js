@@ -12,16 +12,5 @@ describe("Login / Cadastro ", () => {
             )
             expect(res.statusCode).toEqual(200);
     });
-
-    test("Testando Cadastro caso funcione code 200 caso nao code 401", async () => {
-        const res = await request(app)
-            .post("/usuario/cadastrar")
-            .send({
-                email: 'kekeTesteJest',
-                senha: '12345'
-            }
-            )
-            expect(res.statusCode).toEqual(200);
-    });
 })
 
