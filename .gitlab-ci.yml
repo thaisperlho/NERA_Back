@@ -8,8 +8,7 @@ npm:
  - npm config set registry ${CI_NPM_REGISTRY}
  - npm install
  cache:
- path:
- - node_modules/
+ paths: node_modules/
  artifacts:
  when: on_success
 test:
