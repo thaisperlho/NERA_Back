@@ -349,4 +349,5 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,linux,windows,node,intellij,visualstudiocode
 
+# Ignore script.js file
 script.js
