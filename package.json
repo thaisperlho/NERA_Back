@@ -4,8 +4,9 @@
   "description": "NERA (Números, Estratégias de ensino e Recursos de Aprendizagem) é um software de gamificação do ensino de matemática. O objetivo do projeto é oferecer uma plataforma interativa e divertida para ajudar estudantes a aprimorar suas habilidades matemáticas por meio de jogos, atividades personalizadas e acompanhamento do desempenho.",
   "main": "app-nera.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx nodemon app-nera.js"
+    "test": "jest --watchAll",
+    "test:ci": "jest --ci --coverage --coverageReporters=html --coverageReporters=lcov",
+    "dev": "npx nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +20,8 @@
     "sequelize": "^6.35.1"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
     "dotenv": "^16.3.1"
   }
 }
