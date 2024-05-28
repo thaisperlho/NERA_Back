@@ -1,15 +1,19 @@
-# Command to download the Node's latest version
 FROM node:latest
-# WORKDIR command create and enter the /nera folder
-#required to represent all the workspace of the project that you are pushing into the container
-WORKDIR /nera
-# Command to copy all the packages-json
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
 COPY package*.json ./
-#Command to install node_modules
+
+# Install dependencies
 RUN npm install
-#Copy all the files from the project to the container
+
+# Bundle app source
 COPY . .
-#Port that will be used by the container
+
+# Expose port 8081
 EXPOSE 8081
-#Command to run the API inside the container utilizing the node services
-CMD ["npm", "run", "dev"]
+
+# Run the app
+CMD [ "node", "app-nera.js" ]
