@@ -2,30 +2,12 @@ version: '3'
 services:
   nera-backend:
     container_name: nera-backend
-    image: registry.gitlab.com/projetonera/app-nera-back:latest
-    ports:
-      - 8081:8081
-    environment:
-      DB_URI: postgres://postgres:1234@postgres:5432/nera
-      PORT: 8081
-      
-    depends_on:
-      - postgres
-    links:
-      - postgres
-
-  postgres:
-    container_name: postgres
-    restart: always
-    image: postgres
-    ports:
-      - 5432:5432
-    environment:
-      POSTGRES_PASSWORD: 1234
-      POSTGRES_DB: nera
+    image: thaisperlho/nera-api:latest
+  environment:
+    PORT: 8081
 
   nera-frontend:
-    image: registry.gitlab.com/projetonera/app-nera-front:001
+    image: thaisperlho/nera-app:latest
     container_name: nera-frontend
     environment:
       - REACT_APP_API_URL=http://nera-backend:8081
